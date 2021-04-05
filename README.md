@@ -1,4 +1,4 @@
-# assemble-the-computer
+# Build a computer
 "Build a computer - Собери компьютер" - веб-приложение, позволяющее получить и закрепить навыки сборки компьютера.
 
 
