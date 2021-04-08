@@ -6,15 +6,15 @@
   <Timeline
     :activeStage="activeStage"
     :currentStage="currentStage"
-    @restart="restart"
     @changeCurrentStage="changeCurrentStage"
+    @restart="restart"
   />
   <MainPanel
     ref="mainPanel"
     :activeStage="activeStage"
     :currentStage="currentStage"
-    @complete="restart"
     @nextStage="nextStage"
+    @complete="restart"
   />
 </template>
 
@@ -38,43 +38,48 @@ export default {
     restart() {
       this.activeStage = 0;
       this.currentStage = 0;
-      this.$refs.mainPanel.activeStep = 0;
-      this.$refs.mainPanel.activeTask = 0;
-      this.$refs.mainPanel.activeStep = 0;
-      this.$refs.mainPanel.currentStep = 0;
-      this.$refs.mainPanel.scores = [];
-      this.$refs.mainPanel.build = {
-        processor: null,
-        motherboard: null,
-        case: null,
-        cooling: null,
-        ram: null,
-        video_card: null,
-        hard_drive: null,
-        ssd: null,
-        power_supply: null,
-      };
-      this.$refs.mainPanel.installedParts = ["case"];
-      this.$refs.mainPanel.partInstalled = true;
+
+      this.$refs.mainPanel.reset();
+    },
+    nextStage() {
+      this.activeStage += 1;
+      // ? this.currentStage += 1;
+      this.currentStage = this.activeStage;
     },
     changeCurrentStage(stageId) {
       this.currentStage = stageId;
 
-      if (this.currentStage === this.activeStage) {
-        this.$refs.mainPanel.currentStep = this.$refs.mainPanel.activeStep;
-      } else {
+      if (this.currentStage !== this.activeStage) {
         this.$refs.mainPanel.currentStep = 0;
+        return;
       }
-    },
-    nextStage() {
-      this.activeStage += 1;
-      this.currentStage = this.activeStage;
+
+      this.$refs.mainPanel.currentStep = this.$refs.mainPanel.activeStep;
     },
   },
 };
 </script>
 
 <style>
+:root {
+  --pale-light-green: #e8f7d2;
+  --light-green: #a9f340;
+  --main-green: #94d637;
+  --dark-green: #85bf34;
+
+  --pale-red: #fee3e3;
+  --red: #ec2525;
+
+  --pale-light-yellow: #f7f4d2;
+  --light-yellow: #f5eb52;
+  --yellow: #efe543;
+
+  --light-gray: #f7f7f7;
+  --gray: #ededed;
+  --dark-gray: #e9e9e9;
+  --very-dark-gray: #333333;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -85,31 +90,8 @@ body,
   margin: 0;
   padding: 0;
   min-width: 1200px;
-  height: 100%;
-  font-family: Rubik;
-}
-
-:root {
-  --main-green: #94d637;
-  --light-green: #a9f340;
-  --pale-light-green: #e8f7d2;
-  --dark-green: #85bf34;
-
-  --red: #ec2525;
-  --pale-red: #fee3e3;
-
-  --yellow: #efe543;
-  --light-yellow: #f5eb52;
-  --pale-light-yellow: #f7f4d2;
-
-  --light-gray: #f7f7f7;
-  --gray: #ededed;
-  --dark-gray: #e9e9e9;
-  --very-dark-gray: #333333;
-}
-
-body {
   height: 100vh;
+  font-family: Rubik;
 }
 
 #app {
@@ -128,13 +110,14 @@ body {
   margin: 6px;
 }
 .header__text {
-  font-family: "Roboto mono";
-  font-size: 35px;
   margin-top: auto;
+  font-size: 35px;
+  font-family: "Roboto mono";
 }
 
 .main-panel {
-  margin: 0 30px 30px 30px;
+  margin: 30px;
+  margin-top: 0;
   flex: 1;
 }
 </style>

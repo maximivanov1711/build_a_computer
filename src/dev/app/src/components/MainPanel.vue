@@ -71,6 +71,26 @@ export default {
     },
   },
   methods: {
+    reset() {
+      this.activeStep = 0;
+      this.activeTask = 0;
+      this.activeStep = 0;
+      this.currentStep = 0;
+      this.scores = [];
+      this.build = {
+        processor: null,
+        motherboard: null,
+        case: null,
+        cooling: null,
+        ram: null,
+        video_card: null,
+        hard_drive: null,
+        ssd: null,
+        power_supply: null,
+      };
+      this.installedParts = ["case"];
+      this.partInstalled = true;
+    },
     nextStep() {
       if (this.currentStage !== this.activeStage) return;
       // ------------------------
