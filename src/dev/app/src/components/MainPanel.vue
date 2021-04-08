@@ -29,9 +29,9 @@
 </template>
 
 <script>
-import LeftPanel from "./LeftPanel.vue";
-import RightPanel from "./RightPanel.vue";
-import NextStepButton from "./NextStepButton.vue";
+import LeftPanel from "./main_panel/LeftPanel.vue";
+import RightPanel from "./main_panel/RightPanel.vue";
+import NextStepButton from "./main_panel/NextStepButton.vue";
 
 import stages from "../data/stages.json";
 import parts from "../data/parts.json";

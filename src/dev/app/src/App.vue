@@ -3,7 +3,7 @@
     <img class="header__logo" src="./assets/images/logo.png" alt="logo" />
     <span class="header__text">Build a computer - Собери компьютер</span>
   </div>
-  <Timeline
+  <TopPanel
     :activeStage="activeStage"
     :currentStage="currentStage"
     @changeCurrentStage="changeCurrentStage"
@@ -19,13 +19,13 @@
 </template>
 
 <script>
-import Timeline from "./components/Timeline.vue";
+import TopPanel from "./components/TopPanel.vue";
 import MainPanel from "./components/MainPanel.vue";
 
 export default {
   name: "App",
   components: {
-    Timeline,
+    TopPanel,
     MainPanel,
   },
   data() {
@@ -35,17 +35,6 @@ export default {
     };
   },
   methods: {
-    restart() {
-      this.activeStage = 0;
-      this.currentStage = 0;
-
-      this.$refs.mainPanel.reset();
-    },
-    nextStage() {
-      this.activeStage += 1;
-      // ? this.currentStage += 1;
-      this.currentStage = this.activeStage;
-    },
     changeCurrentStage(stageId) {
       this.currentStage = stageId;
 
@@ -55,6 +44,17 @@ export default {
       }
 
       this.$refs.mainPanel.currentStep = this.$refs.mainPanel.activeStep;
+    },
+    nextStage() {
+      this.activeStage += 1;
+      // ? this.currentStage += 1;
+      this.currentStage = this.activeStage;
+    },
+    restart() {
+      this.activeStage = 0;
+      this.currentStage = 0;
+
+      this.$refs.mainPanel.reset();
     },
   },
 };

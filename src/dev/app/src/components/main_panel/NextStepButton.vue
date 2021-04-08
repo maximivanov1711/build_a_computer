@@ -11,13 +11,13 @@
     <img
       v-if="currentStage < 10"
       class="next-step-button__icon"
-      src="../assets/icons/next_step_arrow.png"
+      src="../../assets/icons/next_step_arrow.png"
       alt="next step icon"
     />
     <img
       v-else
       class="next-step-button__icon"
-      src="../assets/icons/white_check_mark.png"
+      src="../../assets/icons/white_check_mark.png"
       alt="next step icon"
     />
   </div>

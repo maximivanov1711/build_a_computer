@@ -10,13 +10,13 @@
         <img
           v-if="partScore(partName, partId) === 1"
           class="part-mark"
-          src="../../assets/icons/green_check_mark.png"
+          src="../../../assets/icons/green_check_mark.png"
           alt="check mark"
         />
         <img
           v-else
           class="part-mark"
-          src="../../assets/icons/x_mark.png"
+          src="../../../assets/icons/x_mark.png"
           alt="check mark"
         />
         <img class="part-icon" :src="partsIcons[partName]" alt="part icon" />
@@ -26,8 +26,8 @@
 </template>
 
 <script>
-import parts from "../../data/parts.json";
-import tasks from "../../data/tasks.json";
+import parts from "../../../data/parts.json";
+import tasks from "../../../data/tasks.json";
 
 export default {
   name: "ResultInfo",

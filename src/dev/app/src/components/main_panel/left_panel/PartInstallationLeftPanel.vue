@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import parts from "../../data/parts.json";
+import parts from "../../../data/parts.json";
 
 export default {
   name: "PartInstallationLeftPanel",

@@ -15,7 +15,7 @@
         yellow: percent > 40 && percent < 70,
         red: percent < 40,
       }"
-      src="../../assets/icons/computer_case.png"
+      src="../../../assets/icons/computer_case.png"
       alt="diagram"
     />
   </div>

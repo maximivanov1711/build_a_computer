@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import tasks from "../../data/tasks.json";
+import tasks from "../../../data/tasks.json";
 
 export default {
   name: "TasksList",

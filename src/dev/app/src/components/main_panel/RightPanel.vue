@@ -28,7 +28,7 @@ import TaskDescription from "./right_panel/TaskDescription.vue";
 import PartInfo from "./right_panel/PartInfo.vue";
 import PartInstallationRightPanel from "./right_panel/PartInstallationRightPanel.vue";
 import ResultDiagram from "./right_panel/ResultDiagram.vue";
-import parts from "../data/parts.json";
+import parts from "../../data/parts.json";
 
 export default {
   name: "RightPanel",
