@@ -25,6 +25,10 @@ export default {
 </script>
 
 <style scoped>
+.part-installation-right-panel p {
+  margin-top: 0;
+}
+
 .part-image {
   width: 200px;
   height: 200px;
