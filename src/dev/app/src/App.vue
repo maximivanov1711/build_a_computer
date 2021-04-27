@@ -108,6 +108,7 @@ body,
 }
 .header__logo {
   margin: 6px;
+  width: 140px;
 }
 .header__text {
   margin-top: auto;
