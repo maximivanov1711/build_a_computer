@@ -3,4 +3,4 @@
 
 
 Чтобы воспользоваться приложением, перейдите по этой ссылке:
-https://maximivanov2004.github.io/build_a_computer/index.html
+https://maximivanov1711.github.io/build_a_computer/index.html
